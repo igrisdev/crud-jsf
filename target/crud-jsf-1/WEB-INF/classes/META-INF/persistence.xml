@@ -5,6 +5,11 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd">
     <!-- Define Persistence Unit -->
     <persistence-unit name='CRUD-PU' transaction-type='JTA'>
-        
+        <jta-data-source>java:/PostgresDS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"></property>
+            <property name="hibernate.format_sql" value="true"></property>
+        </properties>
     </persistence-unit>
 </persistence>
